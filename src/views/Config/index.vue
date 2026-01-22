@@ -3,6 +3,10 @@ import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { configRoutes } from '../../router'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const router = useRouter()
 const route = useRoute()
 const menuList = ref<any[]>(configRoutes.children)
@@ -64,7 +68,9 @@ function skip(path: string) {
         <div v-else />
       </li>
     </ul>
-    <router-view class="flex-1 mt-5" />
+    <div class="flex-1 mt-5">
+      <router-view />
+    </div>
   </div>
 </template>
 

@@ -3,7 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { onBeforeUnmount, onUnmounted, ref, watch } from 'vue'
 
-export function useGsap(scrollContainerRef: any, liRefs: any, isScroll: Ref<boolean>, prizeShow: any, temporaryPrizeShow: boolean) {
+export function useGsap(scrollContainerRef: any, liRefs: any, isScroll: Ref<boolean>, prizeShow: any, temporaryPrizeShow: Ref<boolean>) {
     gsap.registerPlugin(ScrollTrigger)
 
     const ctx = ref()

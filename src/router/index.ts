@@ -5,7 +5,6 @@ import Home from '@/views/Home/index.vue'
 
 export const configRoutes = {
     path: '/config',
-    name: 'Config',
     component: () => import('@/views/Config/index.vue'),
     children: [
         {
@@ -14,7 +13,6 @@ export const configRoutes = {
         },
         {
             path: '/config/person',
-            name: 'PersonConfig',
             component: () => import('@/views/Config/Person/index.vue'),
             meta: {
                 title: i18n.global.t('sidebar.personConfiguration'),
@@ -65,7 +63,6 @@ export const configRoutes = {
         },
         {
             path: '/config/global',
-            name: 'GlobalConfig',
             redirect: '/config/global/all',
             meta: {
                 title: i18n.global.t('sidebar.globalSetting'),

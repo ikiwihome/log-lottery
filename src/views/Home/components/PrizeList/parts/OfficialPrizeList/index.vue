@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { IPrizeConfig } from '@/types/storeType'
-import { ref, watch } from 'vue'
+import { ref, toRef, watch } from 'vue'
 import defaultPrizeImage from '@/assets/images/龙.png'
 import { useGsap } from './useGsap'
 
@@ -22,7 +22,7 @@ const {
     showUpButton,
     showDownButton,
     handleScroll,
-} = useGsap(scrollContainerRef, liRefs, isScroll, prizeShow, props.temporaryPrizeShow)
+} = useGsap(scrollContainerRef, liRefs, isScroll, prizeShow, toRef(props, 'temporaryPrizeShow'))
 
 // 获取ulContainerRef的高度
 function getUlContainerHeight() {
@@ -62,8 +62,8 @@ watch ([prizeShow, () => props.temporaryPrizeShow], (val) => {
 </script>
 
 <template>
-  <transition name="prize-list" class="h-full" :appear="true">
-    <div v-show="prizeShow && !isMobile && !temporaryPrizeShow" class="flex items-center h-full relative ">
+  <transition name="prize-list" :appear="true">
+    <div v-show="prizeShow && !isMobile && !temporaryPrizeShow" class="flex items-center h-full relative h-full">
       <div v-if="isScroll" class="w-full h-16 flex justify-center scroll-button scroll-button-up absolute top-0 z-50">
         <SvgIcon v-show="showUpButton" name="chevron-up" size="64px" class="text-gray-200/80 cursor-pointer" @click="handleScroll(-150)" />
       </div>
