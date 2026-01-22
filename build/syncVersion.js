@@ -17,6 +17,6 @@ const tauriConf = JSON.parse(fs.readFileSync(tauriConfPath, 'utf8'));
 tauriConf.version = version;
 
 // 写回 tauri.conf.json
-fs.writeFileSync(tauriConfPath, JSON.stringify(tauriConf, null, 2));
+fs.writeFileSync(tauriConfPath, JSON.stringify(tauriConf, null, 2) + '\n');
 
 console.log(`Tauri 配置版本号已同步至: ${version}`);
