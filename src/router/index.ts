@@ -125,30 +125,12 @@ export const configRoutes = {
 const routes = [
     {
         path: '/',
-        redirect: '/home',
-    },
-    {
-        path: '/',
         component: Layout,
-        redirect: '/home',
         children: [
             {
-                path: '/home',
+                path: '/',
                 name: 'Home',
                 component: Home,
-            },
-            {
-                path: '/demo',
-                name: 'Demo',
-                component: () => import('@/views/Demo/index.vue'),
-            },
-            {
-                path: '/mobile',
-                name: 'Mobile',
-                meta: {
-                    isMobile: true,
-                },
-                component: () => import('@/views/Mobile/index.vue'),
             },
             configRoutes,
         ],
