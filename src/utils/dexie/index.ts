@@ -29,7 +29,8 @@ class IndexDb {
     }
 
     /**
-     * @param data
+     * @param tableName - The table name
+     * @param data - The data to add
      * @description 添加单条数据，并为数据添加dataTime和type属性
      */
     setData(tableName: string, data: Partial<DbData>) {
@@ -60,7 +61,8 @@ class IndexDb {
     }
 
     /**
-     * @param data
+     * @param tableName - The table name
+     * @param data - The data to delete
      * @description 删除单条数据
      */
     deleteData(tableName: string, data: Partial<DbData>) {
@@ -101,8 +103,9 @@ class IndexDb {
 
     /**
      *
+     * @param tableName - The table name
      * @param filter 根据筛选条件返回数据
-     * @returns
+     * @returns 过滤后的数据Array
      */
     getFilterData(tableName: string, filter: string) {
         return this.dbStore[tableName].filter((item: any) => {

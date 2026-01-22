@@ -82,12 +82,6 @@ export default defineConfig(({ mode }) => {
                     additionalData: '@use "@/style/global.scss" as *;',
                 },
             },
-            // postcss: {
-            //     plugins: [
-            //         require('tailwindcss'),
-            //         require('autoprefixer'),
-            //     ]
-            // }
         },
         clearScreen: false,
         server: {

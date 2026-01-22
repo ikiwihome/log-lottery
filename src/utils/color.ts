@@ -47,7 +47,7 @@ export function rgbToHex(color: string) {
         return color
     }
     // 匹配rgba或rgb格式的字符串
-    const rgbaMatch = color.match(/^rgba?\((\d+),(\d+),(\d+),?(\d+(?:\.\d+)?|\.\d+)?\)$/i)
+    const rgbaMatch = color.match(/^rgba?\((\d{1,3}),(\d{1,3}),(\d{1,3})(?:,(\d+(?:\.\d+)?|\.\d+))?\)$/i)
     if (!rgbaMatch) {
         throw new Error('Invalid color format')
     }

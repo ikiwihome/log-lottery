@@ -13,7 +13,6 @@ export function useWebsocket() {
         if ('serviceWorker' in navigator) {
             try {
                 registration.value = await navigator.serviceWorker.register('/sw.js')
-                console.log('Service Worker 注册成功:', registration)
                 listenSWMessage()
             }
             catch (error) {

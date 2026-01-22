@@ -4,7 +4,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { configRoutes } from '../../router'
 
 defineOptions({
-  inheritAttrs: false,
+    inheritAttrs: false,
 })
 
 const router = useRouter()

@@ -1,11 +1,11 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "log-lottery",
-  "version": "0.6.0-2",
-  "identifier": "to2026.xyz",
+  "version": "1.0.0",
+  "identifier": "ikimi.cc",
   "build": {
     "frontendDist": "../dist",
-    "devUrl": "http://localhost:6719/log-lottery",
+    "devUrl": "http://localhost:6719",
     "beforeDevCommand": "pnpm dev",
     "beforeBuildCommand": "pnpm build"
   },

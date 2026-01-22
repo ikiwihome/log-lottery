@@ -9,7 +9,7 @@ import { useViewModel } from './useViewModel'
 import 'vue-toast-notification/dist/theme-sugar.css'
 
 defineOptions({
-  inheritAttrs: false,
+    inheritAttrs: false,
 })
 
 const viewModel = useViewModel()

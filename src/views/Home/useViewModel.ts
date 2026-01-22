@@ -383,7 +383,6 @@ export function useViewModel() {
         if (!isPlayWinMusic.value) {
             return
         }
-        console.log('准备播放结束音效', dongSound)
 
         // 清理已结束的音频
         playingAudios.value = playingAudios.value.filter(audio => !audio.ended)
@@ -398,7 +397,6 @@ export function useViewModel() {
             if (playPromise) {
                 playPromise
                     .then(() => {
-                        console.log('结束音效播放成功')
                         playingAudios.value.push(endSound)
                     })
                     .catch((err) => {
@@ -410,7 +408,6 @@ export function useViewModel() {
             }
 
             endSound.onended = () => {
-                console.log('结束音效播放完成')
                 const index = playingAudios.value.indexOf(endSound)
                 if (index > -1)
                     playingAudios.value.splice(index, 1)
@@ -452,17 +449,6 @@ export function useViewModel() {
 
         // 重置音频状态
         resetAudioState()
-
-        // 预加载音频资源以解决浏览器自动播放策略
-        try {
-            const audioContext = window.AudioContext || (window as any).webkitAudioContext
-            if (audioContext) {
-                console.log('音频上下文可用')
-            }
-        }
-        catch (e) {
-            console.warn('音频上下文不可用:', e)
-        }
 
         if (!intervalTimer.value) {
             randomBallData()
@@ -638,7 +624,6 @@ export function useViewModel() {
         playingAudios.value = playingAudios.value.filter(audio => !audio.ended && !audio.paused)
 
         if (playingAudios.value.length > maxAudioLimit) {
-            console.log('音频播放数量已达到上限，请勿重复播放')
             return
         }
 
@@ -866,7 +851,6 @@ export function useViewModel() {
         const checkAndInit = () => {
             // 如果人员列表有数据或者等待时间超过2秒，则执行初始化
             if (allPersonList.value.length > 0 || (Date.now() - startTime) >= maxWaitTime) {
-                console.log('初始化完成')
                 tableData.value = initTableData({ allPersonList: allPersonList.value, rowCount: rowCount.value })
                 initThreeJs()
                 animation()
@@ -876,7 +860,6 @@ export function useViewModel() {
                 isInitialDone.value = true
             }
             else {
-                console.log('等待人员列表数据...')
                 // 继续等待
                 setTimeout(checkAndInit, 100) // 每100毫秒检查一次
             }

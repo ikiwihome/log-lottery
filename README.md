@@ -1,26 +1,8 @@
-<div align="center">
-    <a href="https://log1997.github.io/log-lottery/">
-        <img src="./static/images/lottery.png" width="100" height="100" />
-    </a>
-
 # log-lottery 🚀🚀🚀🚀
 
-[![github stars](https://img.shields.io/github/stars/log1997/log-lottery)](https://github.com/LOG1997/log-lottery)
-[![version](https://img.shields.io/github/package-json/v/log1997/log-lottery)](https://github.com/LOG1997/log-lottery)
-[![License MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/LOG1997/log-lottery)
-[![github author](https://img.shields.io/badge/Author-log1997-blue.svg)](https://github.com/log1997)
-[![build](https://img.shields.io/github/actions/workflow/status/log1997/log-lottery/release.yml)](https://github.com/log1997)
-[![docker](https://img.shields.io/docker/pulls/log1997/log-lottery)](<https://hub.docker.com/r/log1997/log-lottery>)
-[![github downloads](https://img.shields.io/github/downloads/log1997/log-lottery/total)](https://github.com/LOG1997/log-lottery/releases)
-[![release data](https://img.shields.io/github/release-date/log1997/log-lottery)](https://github.com/LOG1997/log-lottery/releases)
-[![last commit](https://img.shields.io/github/last-commit/log1997/log-lottery/dev)](https://github.com/LOG1997/log-lottery/commits/dev/)
-</div>
-
-log-lottery是一个可配置可定制化的抽奖应用，炫酷3D球体，可用于年会抽奖等活动，支持奖品、人员、界面、图片音乐配置。
+Lottery是一个可配置可定制化的抽奖应用，炫酷3D球体，可用于年会抽奖等活动，支持奖品、人员、界面、图片音乐配置。
 
 > 如果进入网站遇到图片无法显示或有报错的情况，请先到【全局配置】-【界面配置】菜单中点击【重置所有数据】按钮清除数据后进行更新。
-
-> 不支持内定功能
 
 ## 要求
 
@@ -111,24 +93,18 @@ or
 
 ```bash
 pnpm i
-or
-npm install
 ```
 
 开发运行
 
 ```bash
 pnpm dev
-or
-npm run dev
 ```
 
 打包
 
 ```bash
 pnpm build
-or
-npm run build
 ```
 
 > 项目思路来源于 <https://github.com/moshang-xc/lottery>
@@ -161,7 +137,7 @@ npm run build
     docker run -d -p 9279:80 log-lottery
     ```
 
-    容器运行成功后即可在本地通过<http://localhost:9279/log-lottery/>访问
+    容器运行成功后即可在本地通过<http://localhost:9279/>访问
 
 ## 软件安装包
 
