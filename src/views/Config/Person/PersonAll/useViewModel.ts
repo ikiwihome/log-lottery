@@ -14,7 +14,7 @@ import { readFileBinary, readLocalFileAsArraybuffer } from '@/utils/file'
 import { tableColumns } from './columns'
 import ImportExcelWorker from './importExcel.worker?worker'
 
-type IBasePersonConfig = Pick<IPersonConfig, 'uid' | 'name' | 'department' | 'identity' | 'avatar'>
+type IBasePersonConfig = Pick<IPersonConfig, 'name' | 'department' | 'avatar'>
 
 export function useViewModel({ exportInputFileRef }: { exportInputFileRef: Ref<HTMLInputElement> }) {
     const { t } = useI18n()
@@ -27,11 +27,9 @@ export function useViewModel({ exportInputFileRef }: { exportInputFileRef: Ref<H
     const tableColumnList = tableColumns({ handleDeletePerson: delPersonItem })
     const addPersonModalVisible = ref(false)
     const singlePersonData = ref<IBasePersonConfig>({
-        uid: '',
         name: '',
         department: '',
         avatar: '',
-        identity: '',
     })
     async function getExcelTemplateContent() {
         const locale = i18n.global.locale.value

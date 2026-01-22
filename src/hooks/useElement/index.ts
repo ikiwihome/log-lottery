@@ -50,7 +50,7 @@ export function useElementStyle(props: IUseElementStyle) {
     }
     element.children[0].style.fontSize = `${textSize * scale * 0.5}px`
     if (person.uid) {
-        element.children[0].textContent = person.uid
+        element.children[0].textContent = null
     }
 
     element.children[1].style.fontSize = `${textSize * scale}px`
@@ -63,8 +63,8 @@ export function useElementStyle(props: IUseElementStyle) {
     element.children[2].style.fontSize = `${textSize * scale * 0.5}px`
     // 设置部门和身份的默认值
     element.children[2].innerHTML = ''
-    if (person.department || person.identity) {
-        element.children[2].innerHTML = `${person.department ? person.department : ''}<br/>${person.identity ? person.identity : ''}`
+    if (person.department) {
+        element.children[2].innerHTML = `${person.department ? person.department : ''}<br/>`
     }
     element.children[3].src = person.avatar
     return element

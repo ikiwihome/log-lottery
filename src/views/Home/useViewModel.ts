@@ -50,7 +50,7 @@ export function useViewModel() {
     const ballRotationY = ref(0)
     const containerRef = ref<HTMLElement>()
     const canOperate = ref(true)
-    const cameraZ = ref(3000)
+    const cameraZ = ref(2500)
     const scene = ref()
     const camera = ref()
     const renderer = ref()
@@ -94,7 +94,7 @@ export function useViewModel() {
         renderer.value.domElement.style.position = 'absolute'
         // 垂直居中
         renderer.value.domElement.style.paddingTop = '50px'
-        renderer.value.domElement.style.top = '50%'
+        renderer.value.domElement.style.top = '55%'
         renderer.value.domElement.style.left = '50%'
         renderer.value.domElement.style.transform = 'translate(-50%, -50%)'
         WebGLoutput!.appendChild(renderer.value.domElement)
@@ -113,6 +113,7 @@ export function useViewModel() {
 
             const number = document.createElement('div')
             number.className = 'card-id'
+            number.style.display = 'none'
             number.textContent = tableData.value[i].uid
             if (isShowAvatar.value)
                 number.style.display = 'none'
@@ -127,7 +128,7 @@ export function useViewModel() {
 
             const detail = document.createElement('div')
             detail.className = 'card-detail'
-            detail.innerHTML = `${tableData.value[i].department}<br/>${tableData.value[i].identity}`
+            detail.innerHTML = `${tableData.value[i].department}<br/>`
             if (isShowAvatar.value)
                 detail.style.display = 'none'
             element.appendChild(detail)
