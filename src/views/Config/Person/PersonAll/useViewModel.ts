@@ -36,7 +36,7 @@ export function useViewModel({ exportInputFileRef }: { exportInputFileRef: Ref<H
     async function getExcelTemplateContent() {
         const locale = i18n.global.locale.value
         if (locale === 'zhCn') {
-            const templateData = await readLocalFileAsArraybuffer(`${baseUrl}人口登记表-zhCn.xlsx`)
+            const templateData = await readLocalFileAsArraybuffer(`${baseUrl}人员名单-zhCn.xlsx`)
             return templateData
         }
         else {

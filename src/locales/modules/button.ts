@@ -1,7 +1,7 @@
 export const buttonEn = {
     enterLottery: 'Enter Lottery',
     start: 'Start',
-    selectLucky: 'Draw the Lucky',
+    stopLottery: 'Stop',
     continue: 'Continue',
     confirm: 'Confirm',
     cancel: 'Cancel',
@@ -28,9 +28,9 @@ export const buttonEn = {
 }
 
 export const buttonZhCn = {
-    enterLottery: '进入抽奖',
+    enterLottery: '进入抽奖环节',
     start: '开始',
-    selectLucky: '抽取幸运儿',
+    stopLottery: '停止',
     continue: '继续',
     confirm: '确认',
     cancel: '取消',

@@ -39,7 +39,7 @@ const { t } = useI18n()
     </div>
 
     <button v-if="currentStatus === LotteryStatus.running" class="btn-neon btn glass btn-lg" @click="stopLottery">
-      {{ t('button.selectLucky') }}
+      {{ t('button.stopLottery') }}
     </button>
 
     <div v-if="currentStatus === LotteryStatus.end" class="flex justify-center gap-6 enStop">

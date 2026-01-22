@@ -12,7 +12,7 @@ export const dataEn = {
     operation: 'Operation',
     delete: 'Delete',
     removePerson: 'Remove the Person',
-    defaultTitle: 'The Prelude to the Six Ministries of the Ming Dynasty Cabinet',
+    defaultTitle: 'EVAS Intelligence 2026 Annual Ceremony',
     xlsxName: 'personListTemplate-en.xlsx',
     readmeName: 'readme-en.md',
 }
@@ -24,15 +24,15 @@ export const dataZhCn = {
     isWin: '是否中奖',
     avatar: '头像',
     department: '部门',
-    name: '姓名',
+    name: '名称',
     identity: '身份',
     prizeName: '获奖',
     prizeTime: '获奖时间',
     operation: '操作',
     delete: '删除',
     removePerson: '移入未中奖名单',
-    defaultTitle: '大明内阁六部御前奏对',
-    xlsxName: '人口登记表-zhCn.xlsx',
+    defaultTitle: '奕行智能 2026年会盛典',
+    xlsxName: '人员名单-zhCn.xlsx',
     readmeName: 'readme-zhCn.md',
 }
 
