@@ -8,8 +8,8 @@ export const useGlobalConfig = defineStore('global', {
         return {
             globalConfig: {
                 rowCount: 17,
-                isSHowPrizeList: true,
-                isShowAvatar: false,
+                isSHowPrizeList: false,
+                isShowAvatar: true,
                 topTitle: i18n.global.t('data.defaultTitle'),
                 language: browserLanguage,
                 definiteTime: null as number | null,
@@ -289,8 +289,8 @@ export const useGlobalConfig = defineStore('global', {
             this.globalConfig = {
                 rowCount: 17,
                 winMusic: false,
-                isSHowPrizeList: true,
-                isShowAvatar: false,
+                isSHowPrizeList: false,
+                isShowAvatar: true,
                 topTitle: i18n.global.t('data.defaultTitle'),
                 language: browserLanguage,
                 definiteTime: null,

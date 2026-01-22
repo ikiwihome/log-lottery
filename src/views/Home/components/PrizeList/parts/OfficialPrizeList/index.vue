@@ -63,7 +63,7 @@ watch ([prizeShow, () => props.temporaryPrizeShow], (val) => {
 
 <template>
   <transition name="prize-list" :appear="true">
-    <div v-show="prizeShow && !isMobile && !temporaryPrizeShow" class="flex items-center h-full relative h-full">
+    <div v-show="prizeShow && !isMobile && !temporaryPrizeShow" class="flex items-center h-full relative">
       <div v-if="isScroll" class="w-full h-16 flex justify-center scroll-button scroll-button-up absolute top-0 z-50">
         <SvgIcon v-show="showUpButton" name="chevron-up" size="64px" class="text-gray-200/80 cursor-pointer" @click="handleScroll(-150)" />
       </div>
