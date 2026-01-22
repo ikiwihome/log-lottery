@@ -33,6 +33,10 @@ export function addOtherInfo(personList: any[]) {
         personList[i].prizeId = []
         personList[i].isWin = false
         personList[i].uuid = uuidv4()
+        // 处理 avatar 字段：如果只有文件名，添加相对路径前缀
+        if (personList[i].avatar && !personList[i].avatar.startsWith('http') && !personList[i].avatar.startsWith('/')) {
+            personList[i].avatar = `/avatars/${personList[i].avatar}`
+        }
     }
 
     return personList

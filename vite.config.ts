@@ -10,20 +10,18 @@ import AutoImport from 'unplugin-auto-import/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import Components from 'unplugin-vue-components/vite'
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig } from 'vite'
 import viteCompression from 'vite-plugin-compression'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vitejs.dev/config/
 
 const require = createRequire(import.meta.url)
 const process = require('node:process')
 
 export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, __dirname)
     const chunkName = mode === 'prebuild' ? '[name]' : 'chunk'
     return {
-        base: (mode === 'file' || process.env.TAURI_ENV_PLATFORM) ? './' : '/log-lottery/',
+        base: (mode === 'file' || process.env.TAURI_ENV_PLATFORM) ? './' : '/',
         plugins: [
             vue(),
             tailwindcss(),
@@ -40,13 +38,15 @@ export default defineConfig(({ mode }) => {
                 algorithm: 'gzip',
                 ext: '.gz',
             }),
-            mode === 'prebuild' ? visualizer({
-                emitFile: true, // 是否被触摸
-                filename: 'test.html', // 生成分析网页文件名
-                open: true, // 在默认用户代理中打开生成的文件
-                gzipSize: true, // 从源代码中收集 gzip 大小并将其显示在图表中
-                brotliSize: true, // 从源代码中收集 brotli 大小并将其显示在图表中
-            }) : null,
+            mode === 'prebuild'
+                ? visualizer({
+                    emitFile: true, // 是否被触摸
+                    filename: 'test.html', // 生成分析网页文件名
+                    open: true, // 在默认用户代理中打开生成的文件
+                    gzipSize: true, // 从源代码中收集 gzip 大小并将其显示在图表中
+                    brotliSize: true, // 从源代码中收集 brotli 大小并将其显示在图表中
+                })
+                : null,
 
             createSvgIconsPlugin({
                 // 指定需要缓存的图标文件夹
@@ -129,8 +129,8 @@ export default defineConfig(({ mode }) => {
                     // 生产环境时移除console
                     drop_console: true,
                     drop_debugger: true,
-                },
-            },
+                } as any,
+            } as any,
             //   关闭文件计算
             reportCompressedSize: false,
             //   关闭生成map文件 可以达到缩小打包体积
