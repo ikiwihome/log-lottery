@@ -57,9 +57,8 @@ const patternColorValue = defineModel<string>('patternColorValue')
           v-for="(item, index) in [{ name: '❌', url: '', id: '' }, ...imageList]" :key="index"
           :value="item"
           :title="item.name"
-          class="box-border w-full truncate"
         >
-          <span class="truncate w-option-xs">{{ item.name }}</span>
+          {{ item.name }}
         </option>
       </select>
       <span class="label">
